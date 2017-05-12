@@ -1,0 +1,13 @@
+syntax = "proto3";
+package server;
+
+option go_package = "pb";
+
+message StartReq {}
+message StartResp {
+  string id = 1;
+}
+
+service Server {
+  rpc Start(stream StartReq) returns (stream StartResp) {}
+}
